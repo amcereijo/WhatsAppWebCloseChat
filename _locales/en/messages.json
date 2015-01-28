@@ -1,0 +1,18 @@
+{
+	"extName":{
+		"message": "WhatsApp Web Close Chat",
+  		"description": "Extension name"
+	},
+	"extDescription":{
+		"message": "This extension enables to close the current open chat and leave no question in sight.",
+  		"description": "Extension description"
+	},
+	"closeChatText": {
+		"message": "Close chat",
+		"description": "Text to close chat button"
+	},
+	"closeChatTitle": {
+		"message": "Close chat",
+		"description": "Title to close chat button"
+	}
+}
