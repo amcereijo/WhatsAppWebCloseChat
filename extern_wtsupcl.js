@@ -3,6 +3,7 @@ var ExternFunction = (function() {
 	var closeChatButton = $('<div class="menu-item"><button class="icon closeChat icon-x" title="Close chat">Close</button></div>'),
 		textClose = chrome.i18n.getMessage("closeChatText"),
 		titleClose = chrome.i18n.getMessage("closeChatTitle"),
+		activeChat,
 
 		onDocumentReady = function() {
 			var doc = $(document);
@@ -18,13 +19,17 @@ var ExternFunction = (function() {
 			doc.off('ready', onDocumentReady);
 		},
 		onCloseChat = function() {
-			getPaneChat().style.display = 'none';
-		},
-		onChatClick = function() {
-			var paneChat = getPaneChat();
-			if(paneChat && paneChat.style.display === 'none') {
-				paneChat.style.display = 'block' ;
+			if(activeChat) {
+				activeChat.closest('.active').removeClass('active');
 			}
+			getPaneChat().style.visibility = "hidden";
+		},
+		onChatClick = function(ev) {
+			var paneChat = getPaneChat();
+			if(paneChat && paneChat.style.visibility === 'hidden') {
+				paneChat.style.visibility = 'visible' ;
+			}
+			activeChat = $(ev.target).closest('.chat').addClass('active');
 		},
 		getPaneChat = function () {
 			return document.querySelector('.pane-chat');
