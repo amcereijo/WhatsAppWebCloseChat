@@ -17,6 +17,12 @@ var ExternFunction = (function() {
 			doc.off('click', '.chat', onDocumentReady);
 			doc.on('click', '.chat', onChatClick);
 			doc.off('ready', onDocumentReady);
+			doc.keyup(onKeyUp);
+		},
+		onKeyUp = function(e) {
+			if (e.keyCode === 27) { // esc
+				onCloseChat();	
+			}   
 		},
 		onCloseChat = function() {
 			if(activeChat) {
