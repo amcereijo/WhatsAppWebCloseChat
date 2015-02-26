@@ -20,8 +20,9 @@ var ExternFunction = (function() {
 			doc.keyup(onKeyUp);
 		},
 		onKeyUp = function(e) {
-			// esc and any image not visible
-			if (e.keyCode === 27 && !document.querySelector('.media-viewer')) { 
+			// esc and any image not or emoji panel visible
+			if (e.keyCode === 27 && !document.querySelector('.media-viewer') &&
+				!document.querySelector('.emoji-panel')) { 
 				onCloseChat();
 			}   
 		},
