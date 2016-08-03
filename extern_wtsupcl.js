@@ -1,6 +1,6 @@
 // functionality of the plugin
 var ExternFunction = (function() {
-	var closeChatButton = $('<div class="menu-item"><button class="icon closeChat icon-x" title="Close chat">Close</button></div>'),
+	var closeChatButton = $('<div class="menu-item"><button class="icon closeChat icon-x" title="Close chat"></button></div>'),
 		textClose = chrome.i18n.getMessage("closeChatText"),
 		titleClose = chrome.i18n.getMessage("closeChatTitle"),
 		activeChat,
