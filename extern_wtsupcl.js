@@ -1,6 +1,7 @@
 // functionality of the plugin
 var ExternFunction = (function() {
-	var closeChatButton = $('<div class="menu-item"><button class="icon closeChat icon-x" title="Close chat"></button></div>'),
+	var closeChatButton = $('<button title="Close chat"><span data-icon="x" class=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path opacity=".45" fill="#263238" d="M19.1 17.2l-5.3-5.3 5.3-5.3-1.8-1.8-5.3 5.4-5.3-5.3-1.8 1.7 5.3 5.3-5.3 5.3L6.7 19l5.3-5.3 5.3 5.3 1.8-1.8z"></path></svg></span></button>'),
+
 		textClose = chrome.i18n.getMessage("closeChatText"),
 		titleClose = chrome.i18n.getMessage("closeChatTitle"),
 		activeChat,
@@ -22,9 +23,9 @@ var ExternFunction = (function() {
 		onKeyUp = function(e) {
 			// esc and any image not or emoji panel visible
 			if (e.keyCode === 27 && !document.querySelector('.media-viewer') &&
-				!document.querySelector('.emoji-panel')) { 
+				!document.querySelector('.emoji-panel')) {
 				onCloseChat();
-			}   
+			}
 		},
 		onCloseChat = function() {
 			if(activeChat) {
@@ -42,7 +43,7 @@ var ExternFunction = (function() {
 		getPaneChat = function () {
 			return document.querySelector('.pane-chat');
 		};
-
+console.log('TEST => ' , closeChatButton);
 	//public methods
 	return {
 		initPlugin : function () {
