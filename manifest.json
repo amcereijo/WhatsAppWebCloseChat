@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
-  "name": "Wat'sUp Web Close",
+  "name": "__MSG_extName__",
   "description": "__MSG_extDescription__",
-  "version": "0.6.1",
+  "version": "0.7.0",
   "default_locale": "en",
   "content_scripts": [
     {
