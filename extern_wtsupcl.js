@@ -10,11 +10,13 @@ var ExternFunction = (function() {
 			var doc = $(document);
 			closeChatButton.on('click', onCloseChat);
 			//add listener to add close button when add a new chat window
-			insertionQ('div.pane-chat').summary(function(el) {
-				var menus = el[0].querySelectorAll('.menu-horizontal'),
-					correctMenu = menus.length > 1? (menus.length-1):0;
+
+			insertionQ('div.pane-chat-controls').summary(function(el) {
+				var menus = el[0].querySelectorAll('._3Kxus');
+				var correctMenu = menus.length > 1? (menus.length-1) : 0;
 				$(menus[correctMenu]).append(closeChatButton);
 			});
+
 			doc.off('click', '.chat', onDocumentReady);
 			doc.on('click', '.chat', onChatClick);
 			doc.off('ready', onDocumentReady);
@@ -41,9 +43,9 @@ var ExternFunction = (function() {
 			activeChat = $(ev.target).closest('.chat').addClass('active');
 		},
 		getPaneChat = function () {
-			return document.querySelector('.pane-chat');
+			return document.querySelector('#main');
 		};
-console.log('TEST => ' , closeChatButton);
+
 	//public methods
 	return {
 		initPlugin : function () {
