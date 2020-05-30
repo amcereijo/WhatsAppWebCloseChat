@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "__MSG_extName__",
+  "description": "__MSG_extDescription__",
+  "version": "0.10.1",
+  "default_locale": "en",
+  "content_scripts": [
+    {
+      "matches": ["*://web.whatsapp.com/"],
+      "js": ["jquery-1.9.1.min.js", "insQ.js", "extern_wtsupcl.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "webNavigation",
+    "*://web.whatsapp.com/"
+  ]
+}
